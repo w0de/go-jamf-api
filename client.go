@@ -14,9 +14,13 @@ const (
 
 // Client ... stores an object to talk with Jamf API
 type Client struct {
-	username, password, url, clientId, clientSecret string
-	token                                           *string
-	tokenExpiration                                 *time.Time
+	username        string
+	password        string
+	url             string
+	clientId        string
+	clientSecret    string
+	token           *string
+	tokenExpiration *time.Time
 
 	// The Http Client that is used to make requests
 	HttpClient       *http.Client
