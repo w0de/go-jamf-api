@@ -1,4 +1,4 @@
-module github.com/yohan460/go-jamf-api
+module github.com/w0de/go-jamf-api
 
 go 1.18
 
