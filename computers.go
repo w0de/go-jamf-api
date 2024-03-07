@@ -365,6 +365,14 @@ func (c *Client) GetComputerByUDID(udid string) (*Computer, error) {
 	return out, err
 }
 
+func (c *Client) GetComputerBySerialNumber(serialNumber string) (*Computer, error) {
+	var out *Computer
+	uri := fmt.Sprintf("%s/serialnumber/%v", uriComputers, serialNumber)
+	err := c.DoRequest("GET", uri, nil, nil, &out)
+
+	return out, err
+}
+
 func (c *Client) GetComputers() (*ComputersResponse, error) {
 	out := &ComputersResponse{}
 	uri := fmt.Sprintf("%s/subset/basic", uriComputers)
